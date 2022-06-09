@@ -1,0 +1,167 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct account
+{
+
+	char name[100];
+	char idcard[20];
+	char tel[12];
+	char username[100];
+	char password[8];
+	float money;
+
+	struct account *next;
+};
+ typedef struct account account;
+
+
+
+ account *head=NULL;
+ account *tail=NULL;
+
+void signinone()
+{
+}
+void signintwo()
+{
+}
+
+
+
+void signupone()
+{
+	account *newnodep=(account *)malloc(sizeof (account));
+	printf("请输入姓名:\n");
+	scanf("%s",newnodep->name);
+
+	printf("请输入身份证号:\n");
+	scanf("%s",newnodep->idcard);
+	
+	printf("请输入电话号:\n");
+	scanf("%s",newnodep->tel);
+
+	printf("请输入账号:\n");
+	scanf("%s",newnodep->username);
+	
+	printf("请输入密码:\n");
+	scanf("%s",newnodep->password);
+
+
+	newnodep->money=0.0f;
+	newnodep->next=NULL;
+
+
+	if(head=NULL)
+	{
+		head=newnodep;
+		tail=newnodep;
+	}
+	else
+	{
+		tail->next=newnodep;
+		tail=newnodep;
+	}
+	printf("创建成功\n");
+}
+
+
+
+void signuptwo()
+{
+	account *newnodep=(account *)malloc(sizeof (account));
+	printf("please enter your name:\n");
+	scanf("%s",newnodep->name);
+
+	printf("please enter your idcard:\n");
+	scanf("%s",newnodep->idcard);	
+
+	printf("please enter your tel:\n");
+	scanf("%s",newnodep->tel);
+
+	printf("please enter your username:\n");
+	scanf("%s",newnodep->username);
+
+	printf("please enter your password:\n");
+	scanf("%s",newnodep->password);
+
+
+	newnodep->money=0.0f;
+	newnodep->next=NULL;
+
+
+	if(head=NULL)
+	{
+		head=newnodep;
+		tail=newnodep;
+	}
+	else
+	{
+		tail->next=newnodep;
+		tail=newnodep;
+	}
+	printf("created successfully\n");
+}
+
+
+
+
+ void showmanuone()
+ {
+     printf("开户，按1\n");
+     printf("登录，按2\n");
+
+	 int want;
+	 if(want==1)
+	 {
+		 signupone();
+	 }
+	 else if(want==2)
+	 {
+		 signinone();
+	 }
+ }
+
+
+void showmanutwo()
+ {
+     printf("open an account，press1\n");
+     printf("login account，press2\n");
+
+	 int want;
+	 scanf("%d",&want);
+	 if(want==1)
+	 {
+		 signuptwo();
+	 }
+	 else if(want==2)
+	 {
+		 signintwo();
+	 }
+ }
+
+
+ int main()
+ {
+
+	 printf("欢迎使用xxx银行\n");
+	 printf("welcome to xxx bank\n");
+
+	 int language;
+	 printf("中文，按1\n");
+	 printf("english,press2\n");
+	 scanf("%d",&language);
+
+
+	 if(language==1)
+	 {
+		 showmanuone();
+	 }
+	 else if(language==2)
+	 {
+		 showmanutwo();
+	 }
+	 return 0;
+ }
+
